@@ -1,3 +1,3 @@
 class Neighborhood < ActiveRecord::Base
-    belongs_to :game
+    belongs_to :listing
 end
