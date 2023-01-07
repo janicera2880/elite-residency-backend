@@ -1,4 +1,4 @@
 class Listing < ActiveRecord::Base
-    has_many :neighborhoods
+    has_many :subdivisions
     
 end
