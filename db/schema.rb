@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_08_205126) do
+ActiveRecord::Schema.define(version: 2023_01_08_212317) do
+
+  create_table "accounts", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+  end
 
   create_table "listings", force: :cascade do |t|
     t.string "subdivision"
