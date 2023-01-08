@@ -1,4 +1,5 @@
 class Listing < ActiveRecord::Base
-    has_many :subdivisions
+    belongs_to :subdivision
+    
     
 end
