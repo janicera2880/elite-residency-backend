@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_13_002555) do
+ActiveRecord::Schema.define(version: 2023_01_13_004405) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "name"
@@ -18,11 +18,8 @@ ActiveRecord::Schema.define(version: 2023_01_13_002555) do
   end
 
   create_table "listings", force: :cascade do |t|
-    t.string "subdivision"
     t.integer "list_price"
     t.integer "year_built"
-    t.boolean "for_sale"
-    t.boolean "sold"
     t.integer "storey"
     t.integer "bedroom"
     t.integer "bathroom"
@@ -31,10 +28,10 @@ ActiveRecord::Schema.define(version: 2023_01_13_002555) do
     t.integer "lot_size"
     t.string "architecture_style"
     t.boolean "pool"
-    t.integer "listing_id"
     t.string "image_url"
     t.integer "account_id"
     t.integer "subdivision_id"
+    t.string "status"
   end
 
   create_table "subdivisions", force: :cascade do |t|
