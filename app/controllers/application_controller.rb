@@ -3,12 +3,9 @@ class ApplicationController < Sinatra::Base
   
   # Add your routes here
   get "/listings" do
-    listings = Listing.all.order(:list_price).limit(12)
-    listings.to_json
+    listing = Listing.all.order(:list_price)
+    listing.to_json
   end
-
-  get "/listings/:id" do
-    listing = Listing.find(params[:id])
-
-end
+  #get '/accounts/:id' do
+  #end
 end
