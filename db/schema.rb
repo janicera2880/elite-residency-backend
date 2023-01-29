@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_15_181040) do
+ActiveRecord::Schema.define(version: 2023_01_29_002207) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "name"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2023_01_15_181040) do
   create_table "subdivisions", force: :cascade do |t|
     t.string "name"
     t.string "community_type"
+    t.string "overview"
   end
 
 end

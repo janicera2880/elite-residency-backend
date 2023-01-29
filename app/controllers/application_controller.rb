@@ -3,12 +3,12 @@ class ApplicationController < Sinatra::Base
   
   # Add your routes here
   get "/listings" do
-    listings = Listing.all.order(:list_price)
-    listings.to_json(include: { subdivision: { include: :accounts } })
+    listings = Listing.all
+    listings.to_json
+    listings.to_json(include: :subdivision)
   end
 
   post '/listings' do
-    subdivision = Subdivision.find_or_create_by(name: params[:subdivision])
     listings = Listing.create(
       image_url:params[:image_url],
       status:params[:status],
@@ -24,15 +24,15 @@ class ApplicationController < Sinatra::Base
       pool:params[:pool],
       subdivision_id:params[:subdivision_id],
       account_id:params[:account_id])
-    listings.to_json(include: { subdivision: { include: :accounts } })
+    listing.to_json
   end
+  
 
   patch '/listings/:id' do
-    listing = Listing.find(params[:id])
-    listing.update(list_price :params[:list_price],
-    status: params[:status]
+    listing = Listing.find(params [:id])
+    listings.update(list_price :params[:list_price]
     )
-    listings.to_json(include: { subdivision: { include: :accounts } })
+    listing.to_json
   end
 
   delete '/listings/:id' do
