@@ -12,15 +12,17 @@ class ApplicationController < Sinatra::Base
           overview: params[:overview]
       )
       subdivision.to_json
-  end
+      end
+
   get "/listings" do
-    listings = Listing.all
-    # return a JSON response with an array of all the game data
+    listings = Listing.all.order(:list_price).limit(12)
     listings.to_json
+    
+   
 end
 
 # Add new listing
-post "/listings" do 
+post "/listing_form" do 
     listing = Listing.create(
         image_url: params[:image_url],
         status: params[:status],
@@ -41,7 +43,7 @@ end
 
 # Update availability and listing price to a listing
 patch "/listings/:id" do 
-    listing=Listing.find(params[:id])
+    listing = Listing.find(params[:id])
     listing.update(
         status: params[:status],
         list_price: params[:list_price]
@@ -59,7 +61,7 @@ delete "/listings/:id" do
 end 
 
 get "/subdivisions" do
-  subdivision = Subdivision.all.order(:name)
+  subdivision = Subdivision.all
   subdivision.to_json(include: :listings)
   end
 
