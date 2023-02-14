@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_11_233449) do
+ActiveRecord::Schema.define(version: 2023_02_13_235736) do
 
   create_table "listings", force: :cascade do |t|
     t.string "image_url"
@@ -23,16 +23,13 @@ ActiveRecord::Schema.define(version: 2023_02_11_233449) do
     t.integer "building_size"
     t.integer "lot_size"
     t.string "architecture_style"
-    t.boolean "pool"
     t.integer "subdivision_id"
-    t.boolean "inactive"
     t.boolean "active"
   end
 
   create_table "subdivisions", force: :cascade do |t|
     t.string "image_url"
     t.string "name"
-    t.string "community_type"
     t.string "overview"
   end
 

@@ -15,7 +15,7 @@ class ApplicationController < Sinatra::Base
       end
 
   get "/listings" do
-    listings = Listing.all.order(:list_price).limit(12)
+    listings = Listing.all.order(:list_price)
     listings.to_json
     
    
@@ -25,7 +25,8 @@ end
 post "/listing_form" do 
     listing = Listing.create(
         image_url: params[:image_url],
-        status: params[:status],
+        active: true,
+        inactive: false,
         list_price: params[:list_price],
         year_built: params[:year_built],
         storey: params[:storey],
@@ -45,8 +46,8 @@ end
 patch "/listings/:id" do 
     listing = Listing.find(params[:id])
     listing.update(
-        status: params[:status],
-        list_price: params[:list_price]
+        list_price: params[:list_price],
+        active: true
         
     )
     listing.to_json
@@ -60,6 +61,7 @@ delete "/listings/:id" do
     listing.to_json
 end 
 
+# Show all subdivision including their listings
 get "/subdivisions" do
   subdivision = Subdivision.all
   subdivision.to_json(include: :listings)
