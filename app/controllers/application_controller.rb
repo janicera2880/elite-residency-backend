@@ -4,7 +4,7 @@ class ApplicationController < Sinatra::Base
   
     # form to add new subdivision
     # to_json converts list of Active Record objects to a JSON-formatted string
-    post "/" do 
+    post "/subdivisions" do 
       subdivision = Subdivision.create(
           image_url: params[:image_url],
           name: params[:name],
@@ -20,14 +20,14 @@ class ApplicationController < Sinatra::Base
     end
 
     get "/listings" do
-    listings = Listing.all.order(:list_price)
+    listings = Listing.all
     listings.to_json
     
    
     end
 
     # Add new listing
-    post "/listing_form" do 
+    post "/listings" do 
     listing = Listing.create(
         image_url: params[:image_url],
         active: true,
