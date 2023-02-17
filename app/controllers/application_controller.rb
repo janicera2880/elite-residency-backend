@@ -46,11 +46,11 @@ class ApplicationController < Sinatra::Base
     end
 
     # Update availability and listing price to a listing
-    patch "/listings/:id/edit" do 
+    patch "/listings/:id" do 
     listing = Listing.find(params[:id])
     listing.update(
         list_price: params[:list_price],
-        active: true
+       
         
     )
     listing.to_json
@@ -58,7 +58,7 @@ class ApplicationController < Sinatra::Base
 
     # Delete listing when availabilty is inactive
 
-    delete "listings/:id/edit" do
+    delete "listings/:id" do
     listing = Listing.find(params[:id])
     listing.destroy
     listing.to_json
