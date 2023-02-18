@@ -1,134 +1,75 @@
-# Phase 3 Project Guidelines
+# ELITE RESIDENCY
 
-## Learning Goals
+![video](https://j.gifs.com/jY98gz.gif)
 
-- Build a web basic API with Sinatra and Active Record to support a React
-  frontend
 
-## Introduction
 
-Congrats on getting through all the material for Phase 3! Now's the time to put
-it all together and build something from scratch to reinforce what you know and
-expand your horizons.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-The focus of this project is **building a Sinatra API backend** that uses
-**Active Record** to access and persist data in a database, which will be used
-by a separate **React frontend** that interacts with the database via the API.
+### Table Of Contents
 
-## Requirements
+[Description](#description) 
 
-For this project, you must:
+[Installation](#installation) 
 
-- Use Active Record to interact with a database.
-- Have at least two models with a one-to-many relationship.
-- At a minimum, set up the following API routes in Sinatra:
-  - create and read actions for both models
-  - full CRUD capability for one of the models
-- Build a separate React frontend application that interacts with the API to
-  perform CRUD actions.
-- Implement proper front end state management. You should be updating state using a
-  setState function after receiving your response from a POST, PATCH, or DELETE 
-  request. You should NOT be relying on a GET request to update state. 
-- Use good OO design patterns. You should have separate classes for each of your
-  models, and create instance and class methods as necessary. 
-- Routes in your application (both client side and back end) should follow RESTful
-  conventions.
-- Use your back end optimally. Pass JSON for related associations to the front 
-  end from the back end. You should use active record methods in your controller to grab
-  the needed data from your database and provide as JSON to the front end. You
-  should NOT be relying on filtering front end state or a separate fetch request to
-  retrieve related data.
+[Usage](#usage) 
 
-For example, build a todo list application with a React frontend interface and a
-Sinatra backend API, where a user can:
+[Contributing](#contributing) 
 
-- **Create** a new todo
-- **Read** a list of all todos
-- **Update** an individual todo
-- **Delete** a todo
+[License](#license) 
 
-A `Todo` can be tagged with a `Category`, so that each todo _belongs to_ a
-category and each category _has many_ todos.
+## Description 
 
-## Getting Started
+I created a real estate app that allows prospective buyers, sellers, and investors to search information filtered by price, location, square footage, architecture design, number of bedrooms or bathrooms, etc. Users will have the ability to manage listings by adding new properties or subdivisions, tracking availability, deleting inactive listings, and changing higher or lower listing prices.  I always have interest in the Real Estate business, it is a market that will keep growing and as an aspiring Web Developer, I wanted to help users find their perfect home with a tool that is effective and user-friendly.
 
-### Backend Setup
+Check out my blog post recap about my project here. [My First Full Stack Project-](https://dev.to/janicera2880/my-first-full-stack-project-elite-residency-560n)
 
-This repository has all the starter code needed to get a Sinatra backend up and
-running. [**Fork and clone**][fork link] this repository to get started. Then, run
-`bundle install` to install the gems.
+## Installation
 
-**Important**: Be sure you fork a copy of the repo into your GitHub account
-before cloning it. You can do this by using the link above or by clicking the
-"Octocat" button at the top of this page, then clicking "Fork" in the upper
-right corner of the repo page.
+Load these URL to your browser:
 
-[fork link]: https://github.com/learn-co-curriculum/phase-3-sinatra-react-project/fork
+Fork and clone [Github Front-End Repo](https://github.com/janicera2880/elite-residency-frontend) and [Github Back-End Repo](https://github.com/janicera2880/elite-residency-backend) both to a separate folder and cd each to different windows.
 
-The `app/controllers/application_controller.rb` file has an example GET route
-handler. Replace this route with routes for your project.
+## Usage
 
-You can start your server with:
+### In The Back-End Directory
 
-```console
+Run this command:
+```bash
+$ bundle install
+```
+Run the server with:
+
+```bash
 $ bundle exec rake server
 ```
 
 This will run your server on port
 [http://localhost:9292](http://localhost:9292).
 
-### Frontend Setup
 
-Your backend and your frontend should be in **two different repositories**.
+### In The Front-End Directory
 
-Create a new repository in a **separate folder** with a React app for your
-frontend. To do this, `cd` out of the backend project directory, and use
-[create-react-app][] to generate the necessary code for your React frontend:
-
-```console
-$ npx create-react-app my-app-frontend
+Open the App to your browser with command:
+```bash
+$ npm start
 ```
+## Contributing 
 
-After creating the project locally, you should also
-[create a repository on GitHub][create repo] to host your repo and help
-collaborate, if you're working with a partner.
+All types of contributions are encouraged and valued through pull request.
 
-### Fetch Example
+* Reporting An Issue
+* Submitting A Fix
+* Proposing New Features
+* Maintenance
 
-Your React app should make fetch requests to your Sinatra backend! Here's an
-example:
+Please make sure to update tests as appropriate.
 
-```js
-fetch("http://localhost:9292/test")
-  .then((r) => r.json())
-  .then((data) => console.log(data));
-```
+## Credit
 
-## Project Tips
+My company logo is created free with [Looka](https://looka.com/logo-maker/?gclid=Cj0KCQiAi8KfBhCuARIsADp-A57pP3LBQxgu1It9qfDLe74Lndxx5YGXRM-cPF0asvW2qXNapH--X8QaAroxEALw_wcB) and images from [Zillow](https://www.zillow.com/).
 
-- This project is intended to focus more on the backend than the frontend, so
-  try and keep the React side of things relatively simple. Focus on working with
-  Active Record and performing CRUD actions. What are some interesting queries you can write? What kinds of questions can you ask of your data?
-- Once you have a project idea, come up with a domain model and decide what
-  relationships exist between the models in your application. Use a tool like
-  [dbdiagram.io][] to help visualize your models.
-- Decide on your API endpoints. What data should they return? What kind of CRUD
-  action should they perform? What data do they need from the client?
-- Use [Postman][postman download] to test your endpoints.
-- Use `binding.pry` to debug your requests on the server. It's very helpful to use a
-  `binding.pry` in your controller within a route to see what `params` are being
-  sent.
-- Use the [Network Tab in the Dev Tools][network tab] in the frontend to debug
-  your requests.
+## License 
 
-## Resources
+[MIT](“https://github.com/janicera2880/fixture-catalog/blob/main/LICENSE”)
 
-- [create-react-app][]
-- [dbdiagram.io][]
-- [Postman][postman download]
-
-[create-react-app]: https://create-react-app.dev/docs/getting-started
-[create repo]: https://docs.github.com/en/get-started/quickstart/create-a-repo
-[dbdiagram.io]: https://dbdiagram.io/
-[postman download]: https://www.postman.com/downloads/
-[network tab]: https://developer.chrome.com/docs/devtools/network/
