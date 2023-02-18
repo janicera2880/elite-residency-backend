@@ -20,9 +20,14 @@ name:"Lakeview Heights at The Lake Travis", overview:"Exceptional waterfront liv
 
 s4 = Subdivision.create(image_url:"https://thumbnails.showcaseidx.com/original/photos.harstatic.com/206187014/hr/img-1.jpeg", 
 name:"Costa Bella in River Oaks", overview:"Life at The Village of River Oaks places you among many of finest amenities. Here, you are steps away from the prestigious Country Club and Shopping Center, eclectic shops and unique dining options.")
+
+s5 = Subdivision.create(image_url:"https://image-tc.galaxy.tf/wijpeg-am6q9m874ffdx704r2uejhhow/rooftop-pool-1.jpg?width=1920", 
+name:"Four Seasons Towers", overview:"A luxury high-rise soars 56 stories above the city, making it the focal point of the city's ever-growing skyline. Elegantly designed and beautifully appointed from foundation to peak, We offer even the most discerning high-rise aficionado the very finest place to call home.")
+
+
 puts "Seeding listings..."
 l1 = 
-Listing.create(image_url:"https://photos.zillowstatic.com/fp/c1b6d498d8a7819d0c491a309939455a-uncropped_scaled_within_1536_1152.webp", active: true, list_price: 2599000.00, year_built: 2004, 
+Listing.create(image_url:"https://photos.zillowstatic.com/fp/c1b6d498d8a7819d0c491a309939455a-uncropped_scaled_within_1536_1152.webp", active: false, list_price: 2599000.00, year_built: 2004, 
 storey: 2, bedroom: 5, bathroom: 7, garage: 5, building_size: 8267, lot_size: 10820, architecture_style: "Mediterranean", subdivision_id: s1.id )
 l2 = 
 Listing.create(image_url:"https://photos.zillowstatic.com/fp/8affaa18ea2212c7fe76d40a386df8d9-uncropped_scaled_within_1536_1152.webp", active: true, list_price: 580999.00, year_built: 2022, 
@@ -67,7 +72,7 @@ l15 =
 Listing.create(image_url:"https://photos.zillowstatic.com/fp/f65f5d23e0d37ae65d07652338714d85-uncropped_scaled_within_1536_1152.webp", active: true, list_price: 2395000.00, year_built: 2011, 
 storey: 2, bedroom: 4, bathroom: 5, garage: 4, building_size: 4910, lot_size: 10500, architecture_style: "Modern Traditional", subdivision_id: s1.id )
 l16 = 
-Listing.create(image_url:"https://photos.zillowstatic.com/fp/f133b1b8b5ea60779049c02c6e773317-uncropped_scaled_within_1536_1152.webp", active: true, list_price: 6300.00, year_built: 2017, 
+Listing.create(image_url:"https://photos.zillowstatic.com/fp/f133b1b8b5ea60779049c02c6e773317-uncropped_scaled_within_1536_1152.webp", active: false, list_price: 6300.00, year_built: 2017, 
 storey: 1, bedroom: 3, bathroom: 3, garage: 3, building_size: 3700, lot_size: 3700, architecture_style: "Condominium", subdivision_id: s3.id )
 l17 = 
 Listing.create(image_url:"https://photos.zillowstatic.com/fp/fe949092c6b02d57100da3a4b05120f8-uncropped_scaled_within_1536_1152.webp", active: true, list_price: 6950000.00, year_built: 2013, 
@@ -79,6 +84,16 @@ l19 =
 Listing.create(image_url:"https://photos.zillowstatic.com/fp/1293aeda302447853829669a899898e4-uncropped_scaled_within_1536_1152.webp", active: true, list_price: 3850000.00, year_built: 2000, 
 storey: 2, bedroom: 4, bathroom: 6, garage: 3, building_size: 8239, lot_size: 12100, architecture_style: "Tuscan", subdivision_id: s2.id )
 l20 = 
-Listing.create(image_url:"https://photos.zillowstatic.com/fp/109d19d1aeb643d43b687920277d839f-uncropped_scaled_within_1536_1152.webp", active: false, list_price: 1050000.00, year_built: 2022, 
+Listing.create(image_url:"https://photos.zillowstatic.com/fp/109d19d1aeb643d43b687920277d839f-uncropped_scaled_within_1536_1152.webp", active: true, list_price: 1050000.00, year_built: 2022, 
 storey: 2, bedroom: 5, bathroom: 6, garage: 3, building_size: 4318, lot_size: 9058, architecture_style: "Contemporary", subdivision_id: s1.id )
+l21 = 
+Listing.create(image_url:"https://www.sothebysrealty.com/localimagereader.ashx?imageurl=https%3A%2F%2Fsir.azureedge.net%2F1194i215%2Fmt6yc1cx83qpmatqwqynszwf31i215&imagecache=true", active: true, list_price: 250000.00, year_built: 2023, 
+storey: 1, bedroom: 4, bathroom: 3, garage: 1, building_size: 1318, lot_size: 35058, architecture_style: "Condominium", subdivision_id: s5.id )
+l22 = 
+Listing.create(image_url:"https://xr3d.com/wp-content/uploads/2017/02/304-Living.jpg", active: true, list_price: 50000.00, year_built: 2018, 
+storey: 1, bedroom: 4, bathroom: 3, garage: 1, building_size: 2618, lot_size: 5058, architecture_style: "Condominium", subdivision_id: s5.id )
+l23 = 
+Listing.create(image_url:"https://robbreport.com/wp-content/uploads/2022/03/One_Madison_PH6.jpg?w=1000", active: true, list_price: 70050.00, year_built: 2015, 
+storey: 2, bedroom: 7, bathroom: 5, garage: 1, building_size: 25618, lot_size: 98058, architecture_style: "Condominium", subdivision_id: s5.id )
+
 puts "✅ Done seeding!"
