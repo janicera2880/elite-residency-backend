@@ -58,7 +58,7 @@ class ApplicationController < Sinatra::Base
 
     # Delete listing when availabilty is inactive
 
-    delete "listings/:id" do
+    delete "/listings/:id" do
     listing = Listing.find(params[:id])
     listing.destroy
     listing.to_json
