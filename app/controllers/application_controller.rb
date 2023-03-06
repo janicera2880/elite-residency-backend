@@ -17,10 +17,11 @@ class ApplicationController < Sinatra::Base
     # define a route for a GET request to the /subdivision URL endpoint. Call all method on Subd model and retrieve all records then assign to subdivision variable.
     # include all listings object
     get "/subdivisions" do
-    subdivision = Subdivision.all
+    subdivision = Subdivision.all.order(:title)
     subdivision.to_json(include: :listings)
     end
 
+    # define GET request so that when user navigates to /listings endpoint, server will respond and retrieve all Listing table and sort in ascending based on list_price.
     get "/listings" do
     listings = Listing.all.order(:list_price)
     listings.to_json
@@ -28,7 +29,7 @@ class ApplicationController < Sinatra::Base
    
     end
 
-    # Add new listing
+    # define a route for a POST request, call create method on Listing Model
     post "/listings" do 
     listing = Listing.create(
         image_url: params[:image_url],
@@ -57,8 +58,8 @@ class ApplicationController < Sinatra::Base
     listing.to_json
     end
 
-    # defines a DELETE endpoint for a web API that deletes a specific listing identified by its ID.
-    #
+    # defines a DELETE endpoint for a web API that deletes a specific listing identified by its ID using params hash with find method.
+    
     delete "/listings/:id" do
     listing = Listing.find(params[:id])
     listing.destroy
