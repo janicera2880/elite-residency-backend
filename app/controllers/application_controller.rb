@@ -2,7 +2,8 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
 
   
-    # form to add new subdivision
+    # define a route for a POST request, call create method on Subd Model
+    # params hash contains key-value pairs corresponding to the input fields of a form
     # to_json converts list of Active Record objects to a JSON-formatted string
     post "/subdivisions" do 
       subdivision = Subdivision.create(
@@ -13,14 +14,15 @@ class ApplicationController < Sinatra::Base
       subdivision.to_json
       end
 
-    # Show all subdivision including their listings
+    # define a route for a GET request to the /subdivision URL endpoint. Call all method on Subd model and retrieve all records then assign to subdivision variable.
+    # include all listings object
     get "/subdivisions" do
     subdivision = Subdivision.all
     subdivision.to_json(include: :listings)
     end
 
     get "/listings" do
-    listings = Listing.all
+    listings = Listing.all.order(:list_price)
     listings.to_json
     
    
@@ -45,19 +47,18 @@ class ApplicationController < Sinatra::Base
     listing.to_json
     end
 
-    # Update availability and listing price to a listing
+    # define endpoint for PATCH request where :id is a parameter that represent the ID of the listing to be updated
     patch "/listings/:id" do 
     listing = Listing.find(params[:id])
     listing.update(
         list_price: params[:list_price],
-       
-        
+          
     )
     listing.to_json
     end
 
-    # Delete listing when availabilty is inactive
-
+    # defines a DELETE endpoint for a web API that deletes a specific listing identified by its ID.
+    #
     delete "/listings/:id" do
     listing = Listing.find(params[:id])
     listing.destroy
