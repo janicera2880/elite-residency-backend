@@ -48,7 +48,8 @@ class ApplicationController < Sinatra::Base
     listing.to_json
     end
 
-    # define endpoint for PATCH request where :id is a parameter that represent the ID of the listing to be updated
+    # Define endpoint for PATCH request where :id is a parameter that represent the ID of the listing to be updated.
+    
     patch "/listings/:id" do 
     listing = Listing.find(params[:id])
     listing.update(
@@ -58,7 +59,7 @@ class ApplicationController < Sinatra::Base
     listing.to_json
     end
 
-    # defines a DELETE endpoint for a web API that deletes a specific listing identified by its ID using params hash with find method.
+    # Defines a DELETE endpoint for a web API that deletes a specific listing identified by its ID using params hash with find method.
     
     delete "/listings/:id" do
     listing = Listing.find(params[:id])
